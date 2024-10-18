@@ -1,5 +1,4 @@
--- Stored Procedure to compute and store the average
--- score for a given user
+-- Stored Procedure to compute and store the average score for a given user
 DELIMITER $$
 
 CREATE PROCEDURE ComputeAverageScoreForUser(
