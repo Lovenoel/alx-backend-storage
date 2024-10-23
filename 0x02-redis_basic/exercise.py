@@ -52,7 +52,11 @@ class Cache:
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn: Optional[Callable] = None) -> Union[str, bytes, int, float, None]:
+    def get(
+            self,
+            key: str,
+            fn: Optional[Callable] = None
+            ) -> Union[str, bytes, int, float, None]:
         """
         Retrieve data from Redis and optionally apply a callable
         to convert it
@@ -98,4 +102,6 @@ class Cache:
         print(f"{func_name} was called {num_calls} times:")
 
         for inp, outp in zip(inputs, outputs):
-            print(f"{func_name}(*{inp.decode('utf-8')}) -> {outp.decode('utf-8')}")
+            inp_str = inp.decode('utf-8')
+            outp_str = outp.decode('utf-8')
+            print(f"{func_name}(*{inp_str}) -> {outp_str}")
