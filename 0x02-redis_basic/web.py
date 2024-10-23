@@ -18,7 +18,7 @@ def get_page(url: str) -> str:
 
     Args:
         url (str): The URL to fetch.
-    
+
     Returns:
         str: The HTML content of the page.
     """
@@ -29,7 +29,7 @@ def get_page(url: str) -> str:
     cached_page = r.get(f"cached:{url}")
     if cached_page:
         return cached_page.decode('utf-8')
-    
+
     # If not cached, fetch the page
     response = requests.get(url)
     html_content = response.text
